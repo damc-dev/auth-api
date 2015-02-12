@@ -32,7 +32,7 @@ exports.start = function() {
   server.post('/authenticate', user.authenticate);
   server.get('/me', jwt({secret: tokenConfig.jwt_secret}), user.me);
 
-  server.listen(8080, function () {
+  server.listen(appConfig.port, function () {
     log.info('%s listening at %s', server.name, server.url);
   });
 
